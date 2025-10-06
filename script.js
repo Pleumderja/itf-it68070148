@@ -1,56 +1,48 @@
-let accountBalance = 1000;
-let cashBalance = 1000;
+let accountBalance = 0;
+let cashBalance = 0;
 
 function setBalance() {
-  accountBalance = parseFloat(document.getElementById("accountBalance").value) || accountBalance;
-  cashBalance = parseFloat(document.getElementById("cashBalance").value) || cashBalance;
-  addHistory(`Balances updated ➤ Account: ${accountBalance}, Cash: ${cashBalance}`);
+  accountBalance = Number(document.getElementById("accountBalance").value);
+  cashBalance = Number(document.getElementById("cashBalance").value);
+  addHistory("Set balances: Account = " + accountBalance + ", Cash = " + cashBalance);
 }
 
-function proceed() {
-  const amount = parseFloat(document.getElementById("amount").value);
-  const operation = document.getElementById("operation").value;
+function deposit() {
+  let amount = Number(document.getElementById("amount").value);
+  accountBalance += amount;
+  addHistory("Deposit " + amount + " | New balance: " + accountBalance);
+}
 
-  if (isNaN(amount) || amount <= 0) {
-    alert("Please enter a valid amount");
+function withdraw() {
+  let amount = Number(document.getElementById("amount").value);
+  if (amount > accountBalance) {
+    alert("Not enough balance!");
     return;
   }
+  accountBalance -= amount;
+  addHistory("Withdraw " + amount + " | New balance: " + accountBalance);
+}
 
-  if (operation === "deposit") {
-    accountBalance += amount;
-    addHistory(`💰 Deposit ${amount} | New balance: ${accountBalance}`);
-  } else if (operation === "withdraw") {
-    if (amount > accountBalance) {
-      alert("Insufficient funds!");
-      return;
-    }
-    accountBalance -= amount;
-    addHistory(`💸 Withdraw ${amount} | New balance: ${accountBalance}`);
+function convertCurrency() {
+  let amount = Number(document.getElementById("inputAmount").value);
+  let currency = document.getElementById("currency").value;
+  let rate = 36.5;
+  let result = 0;
+  let output = "";
+
+  if (currency === "USD") {
+    result = amount * rate;
+    output = "THB";
+  } else {
+    result = amount / rate;
+    output = "USD";
   }
+
+  document.getElementById("resultText").innerText = "Result: " + result.toFixed(2) + " " + output;
+  addHistory("Convert " + amount + " " + currency + " → " + result.toFixed(2) + " " + output);
 }
 
 function addHistory(text) {
-  const historyBox = document.getElementById("history");
-  historyBox.value += text + "\n";
-  historyBox.scrollTop = historyBox.scrollHeight;
-}
-
-/* Currency Converter */
-function convertCurrency() {
-  const amount = parseFloat(document.getElementById("inputAmount").value);
-  const currency = document.getElementById("currency").value;
-  const output = document.getElementById("outputAmount");
-
-  if (isNaN(amount) || amount <= 0) {
-    alert("Enter valid amount!");
-    return;
-  }
-
-  let result = 0;
-  const rate = 36.5; // THB per USD
-
-  if (currency === "USD") result = amount * rate;
-  else result = amount / rate;
-
-  output.value = result.toFixed(2);
+  let history = document.getElementById("history");
+  history.value += text + "\n";
 }

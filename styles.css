@@ -1,97 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
-
 body {
-  font-family: 'Prompt', sans-serif;
-  background-color: #f8faff;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
-/* Navbar */
-nav {
-  background-color: #1e5edc;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 20px;
-  align-items: center;
+h1 {
+  color: blue;
 }
 
-/* Header */
-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 20px;
-}
-
-header img {
-  width: 80px;
-  height: 80px;
-}
-
-header h2 {
-  margin: 0;
-  color: #002b7f;
-}
-
-/* Log Section */
-.log-section {
-  text-align: center;
-}
-
-.log-section textarea {
-  width: 90%;
-  height: 100px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  resize: none;
-}
-
-/* Main Layout */
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 90%;
-  margin: 20px auto;
-}
-
-section {
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-h3 {
-  color: #003c9e;
-  border-bottom: 2px solid #003c9e;
-  padding-bottom: 5px;
-}
-
-.content-block {
-  margin-top: 15px;
-}
-
-input, select {
+textarea {
   width: 100%;
-  padding: 6px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 button {
-  background-color: #1e5edc;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
-button:hover {
-  background-color: #174bb0;
+  margin: 3px;
+  padding: 5px 10px;
 }
