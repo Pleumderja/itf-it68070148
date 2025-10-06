@@ -1,10 +1,66 @@
-nav{
-    background-color:chocolate;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
 
 body {
-    margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #004aad;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+section {
+  background-color: white;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 700px;
+}
+
+h2 {
+  color: #004aad;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #0078ff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+textarea {
+  resize: none;
 }

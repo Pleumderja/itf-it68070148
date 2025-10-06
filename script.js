@@ -1,32 +1,40 @@
-let balance = 1000;
+let accountBalance = 0;
+let cashBalance = 0;
 
-function updateDisplay() {
-  document.getElementById("balance").textContent = "ยอดเงิน: ฿" + balance;
+function setBalance() {
+  const acc = parseFloat(document.getElementById("accountBalance").value) || 0;
+  const cash = parseFloat(document.getElementById("cashBalance").value) || 0;
+  accountBalance = acc;
+  cashBalance = cash;
+  addHistory(`✅ Set balances: Account = ${acc}, Cash = ${cash}`);
 }
 
-function handleTransaction() {
-  const operation = document.getElementById("operation").value;
+function deposit() {
   const amount = parseFloat(document.getElementById("amount").value);
-
   if (isNaN(amount) || amount <= 0) {
-    alert("กรุณากรอกจำนวนเงินให้ถูกต้อง");
+    alert("Please enter a valid amount");
     return;
   }
-
-  if (operation === "deposit") {
-    balance += amount;
-    alert("ฝากเงินเรียบร้อย");
-  } else if (operation === "withdraw") {
-    if (amount > balance) {
-      alert("ยอดเงินไม่เพียงพอ");
-      return;
-    }
-    balance -= amount;
-    alert("ถอนเงินเรียบร้อย");
-  }
-
-  updateDisplay();
-  document.getElementById("amount").value = "";
+  accountBalance += amount;
+  addHistory(`💰 Deposit: +${amount} | New Account Balance = ${accountBalance}`);
 }
 
-updateDisplay();
+function withdraw() {
+  const amount = parseFloat(document.getElementById("amount").value);
+  if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid amount");
+    return;
+  }
+  if (amount > accountBalance) {
+    alert("Insufficient funds!");
+    return;
+  }
+  accountBalance -= amount;
+  addHistory(`💸 Withdraw: -${amount} | New Account Balance = ${accountBalance}`);
+}
+
+function addHistory(text) {
+  const historyBox = document.getElementById("history");
+  historyBox.value += text + "\n";
+  historyBox.scrollTop = historyBox.scrollHeight;
+}

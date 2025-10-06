@@ -2,23 +2,58 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ระบบฝาก-ถอนเงิน</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITF Bank - itf-it65xxxxxxx</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav>
+    <h1>🏦 ITF Bank</h1>
+    <p>Student ID: itf-it65xxxxxxx</p>
+  </nav>
 
-  <h2>ระบบฝาก-ถอนเงิน</h2>
+  <section class="overview">
+    <h2>Account Overview</h2>
+    <p>Welcome to your personal banking dashboard.</p>
+  </section>
 
-  <div id="balance">ยอดเงิน: ฿1000</div>
+  <section class="balance-info">
+    <h2>Balance Information</h2>
+    <div class="input-group">
+      <label>Account Balance:</label>
+      <input type="number" id="accountBalance" placeholder="Enter account balance">
+    </div>
+    <div class="input-group">
+      <label>Cash Balance:</label>
+      <input type="number" id="cashBalance" placeholder="Enter cash balance">
+    </div>
+    <button onclick="setBalance()">Set Balances</button>
+  </section>
 
-  <select id="operation">
-    <option value="deposit">ฝากเงิน</option>
-    <option value="withdraw">ถอนเงิน</option>
-  </select>
+  <section class="bank-operation">
+    <h2>Bank Operation</h2>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <div class="btn-group">
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+  </section>
 
-  <input type="number" id="amount" placeholder="กรอกจำนวนเงิน" />
+  <section class="converter">
+    <h2>Currency Converter</h2>
+    <input type="number" placeholder="Enter amount">
+    <select>
+      <option value="THB">THB</option>
+      <option value="USD">USD</option>
+    </select>
+    <button disabled>Convert</button>
+    <p>Converted amount will appear here.</p>
+  </section>
 
-  <button onclick="handleTransaction()">ดำเนินการ</button>
+  <section class="history">
+    <h2>Transaction History</h2>
+    <textarea id="history" rows="6" readonly></textarea>
+  </section>
 
   <script src="script.js"></script>
 </body>
