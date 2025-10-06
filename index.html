@@ -1,55 +1,70 @@
 <!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITF Simple Bank</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ITF Bank Website</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav>
+            <p>68070148</p>
+            <h2>ITF Bank Website</h2>
+            <p>Week 14</p>
+        </nav>
 
-  <nav>
-    <h1>ITF Simple Bank</h1>
-    <p>Student ID: 68070148</p>
-  </nav>
-
- 
-  <div id="log">
-    <h2>Transaction Log</h2>
-    <textarea id="history" rows="5" readonly></textarea>
-  </div>
-
-
-  <div class="container">
-
-    <div class="left">
-      <h3>Balance Information</h3>
-      <p>Account Balance: <input type="number" id="accountBalance"></p>
-      <p>Cash Balance: <input type="number" id="cashBalance"></p>
-      <button onclick="setBalance()">Set Balance</button>
-
-      <h3>Bank Operation</h3>
-      <p>Amount: <input type="number" id="amount"></p>
-      <button onclick="deposit()">Deposit</button>
-      <button onclick="withdraw()">Withdraw</button>
-    </div>
-
-
-    <div class="right">
-      <h3>Currency Converter</h3>
-      <p>Amount: <input type="number" id="inputAmount"></p>
-      <p>
-        Currency:
-        <select id="currency">
-          <option value="USD">USD</option>
-          <option value="THB">THB</option>
-        </select>
-      </p>
-      <button onclick="convertCurrency()">Convert</button>
-      <p id="resultText">Result: -</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+        <div class="container">
+            <div class="header-container">
+                <img src="Cry.png" width="96" alt="Website Mascot" />
+                <h2 id="my-title">Welcome to my Bank!!!</h2>
+            </div>
+            <hr>
+            <div id="log-output"></div>
+            <div class="main-content">
+                <div class="column">
+                    <h3>Account Overview</h3>
+                    <div class="info-block">
+                        <img src="Adore.png" width="64" alt="Adore" />
+                        <div>
+                            <strong>Balance Information</strong>
+                            <span>Current account balance: <input type="text" id="current-account-balance" value="1400" readonly></span>
+                            <span>Current cash balance: <input type="text" id="current-cash-balance" value="4600" readonly></span>
+                            <button type="button" id="change-balance-btn">Change</button>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <img src="safe.png" width="64" alt="safe" />
+                        <div>
+                            <strong>Bank Operation</strong>
+                            <select id="operation-type">
+                                <option value="Withdraw">Withdraw</option>
+                                <option value="Deposit">Deposit</option>
+                            </select>
+                            <input type="number" id="operation-amount" value="1500">
+                            <button type="button" id="proceed-btn">Proceed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Financial Tools</h3>
+                    <div class="info-block">
+                        <img src="Furious.png" width="64" alt="Furious" />
+                        <div>
+                            <strong>Currency Converter</strong>
+                            <span>Input balance: <input type="number" id="input-balance" value="0"></span>
+                            <span>Output balance: <input type="text" id="output-balance" value="0" readonly></span>
+                            <span>Input currency:
+                                <select id="input-currency">
+                                    <option value="USD">USD</option>
+                                    <option value="THB">THB</option>
+                                </select>
+                            </span>
+                            <button type="button" id="convert-btn">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>

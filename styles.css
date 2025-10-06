@@ -1,56 +1,82 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #eef3ff; 
+    margin: 0;
+    font-family: sans-serif;
 }
-
 
 nav {
-  background-color: #0056d2;
-  color: white;
-  padding: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #1665E5;
+    color: white;
 }
-
 
 .container {
-  display: flex;
-  gap: 20px;
+    margin: 16px 32px;
 }
 
-
-.left, .right {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  flex: 1;
+#my-title {
+    color: pink;
 }
 
-
-#log {
-  background-color: #fff9c4; 
-  padding: 10px;
-  margin-bottom: 10px;
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-
-button {
-  background-color: #0078ff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin: 3px;
-  cursor: pointer;
+#log-output {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 16px;
+    height: 150px;
+    overflow-y: auto;
+    font-family: monospace;
+    margin-top: 16px;
+    margin-bottom: 32px;
 }
 
-button:hover {
-  background-color: #0059c0;
+.main-content {
+    display: flex;
+    gap: 32px;
 }
 
-
-input, select, textarea {
-  margin-top: 3px;
-  padding: 3px;
+.column {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
 }
 
+.info-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
 
+.info-block div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.info-block input, .info-block select, .info-block button {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.info-block button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+}
+
+.info-block button:hover {
+    background-color: #0056b3;
+}
