@@ -13,7 +13,7 @@ const inputCurrency = document.getElementById('input-currency');
 
 let logEntryNumber = 0;
 let isEditMode = false;
-const USD_TO_THB_RATE = 32.5;
+const USD_TO_THB_RATE = 35;
 
 function addLog(message) {
     logEntryNumber++;
