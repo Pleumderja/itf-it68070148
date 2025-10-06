@@ -3,57 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITF Bank - itf-it65xxxxxxx</title>
+  <title>ITF Simple Bank</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
-    <h1>🏦 ITF Bank</h1>
-    <p>Student ID: itf-it65xxxxxxx</p>
+    <div class="nav-left">
+      <p>67070057</p>
+    </div>
+    <div class="nav-center">
+      <h1>ITF Website</h1>
+    </div>
+    <div class="nav-right">
+      <p>Week 14</p>
+    </div>
   </nav>
 
-  <section class="overview">
-    <h2>Account Overview</h2>
-    <p>Welcome to your personal banking dashboard.</p>
-  </section>
-
-  <section class="balance-info">
-    <h2>Balance Information</h2>
-    <div class="input-group">
-      <label>Account Balance:</label>
-      <input type="number" id="accountBalance" placeholder="Enter account balance">
+  <!-- Header -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3128/3128313.png" alt="Bank Logo">
+    <div>
+      <h2>ITF Simple Bank</h2>
+      <p>Welcome to my first HTML + CSS + JS website!</p>
     </div>
-    <div class="input-group">
-      <label>Cash Balance:</label>
-      <input type="number" id="cashBalance" placeholder="Enter cash balance">
+  </header>
+
+  <!-- Log / History -->
+  <section class="log-section">
+    <textarea id="history" rows="5" readonly>1, Current account balance: 1000, Current cash balance: 1000</textarea>
+  </section>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- Left Column -->
+    <div class="left">
+      <!-- Account Overview -->
+      <section class="account-overview">
+        <h3>Account Overview</h3>
+        <div class="content-block">
+          <p><strong>Account Information</strong></p>
+          <p>Name: <span>__________</span></p>
+          <p>Type: <span>__________</span></p>
+        </div>
+
+        <div class="content-block">
+          <p><strong>Balance Information</strong></p>
+          <label>Current account balance:</label>
+          <input type="number" id="accountBalance" placeholder="1000"><br>
+          <label>Current cash balance:</label>
+          <input type="number" id="cashBalance" placeholder="1000"><br>
+          <button onclick="setBalance()">Change</button>
+        </div>
+
+        <div class="content-block">
+          <p><strong>Bank Operation</strong></p>
+          <select id="operation">
+            <option value="deposit">Deposit</option>
+            <option value="withdraw">Withdraw</option>
+          </select>
+          <input type="number" id="amount" placeholder="Enter amount">
+          <button onclick="proceed()">Proceed</button>
+        </div>
+      </section>
     </div>
-    <button onclick="setBalance()">Set Balances</button>
-  </section>
 
-  <section class="bank-operation">
-    <h2>Bank Operation</h2>
-    <input type="number" id="amount" placeholder="Enter amount">
-    <div class="btn-group">
-      <button onclick="deposit()">Deposit</button>
-      <button onclick="withdraw()">Withdraw</button>
+    <!-- Right Column -->
+    <div class="right">
+      <section class="converter">
+        <h3>Currency Converter</h3>
+        <label>Input balance:</label>
+        <input type="number" id="inputAmount" placeholder="0"><br>
+        <label>Output balance:</label>
+        <input type="number" id="outputAmount" placeholder="0" readonly><br>
+        <label>Input currency:</label>
+        <select id="currency">
+          <option value="USD">USD</option>
+          <option value="THB">THB</option>
+        </select>
+        <button onclick="convertCurrency()">Convert</button>
+      </section>
     </div>
-  </section>
-
-  <section class="converter">
-    <h2>Currency Converter</h2>
-    <input type="number" placeholder="Enter amount">
-    <select>
-      <option value="THB">THB</option>
-      <option value="USD">USD</option>
-    </select>
-    <button disabled>Convert</button>
-    <p>Converted amount will appear here.</p>
-  </section>
-
-  <section class="history">
-    <h2>Transaction History</h2>
-    <textarea id="history" rows="6" readonly></textarea>
-  </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
