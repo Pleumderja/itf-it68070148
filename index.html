@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href=""styles.css>
+  <meta charset="UTF-8">
+  <title>ระบบฝาก-ถอนเงิน</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <p>68070148</p>
-        <h2>ITF Website</h2>
-        <p>Week 14</p>
-    </nav>
-    <div>
-        Enter number: <input type="number" id="myinput" value="0">
-        <button onclick="add()">+1</button>
-    </div>
-    <script src="script.js"></script>
+
+  <h2>ระบบฝาก-ถอนเงิน</h2>
+
+  <div id="balance">ยอดเงิน: ฿1000</div>
+
+  <select id="operation">
+    <option value="deposit">ฝากเงิน</option>
+    <option value="withdraw">ถอนเงิน</option>
+  </select>
+
+  <input type="number" id="amount" placeholder="กรอกจำนวนเงิน" />
+
+  <button onclick="handleTransaction()">ดำเนินการ</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
