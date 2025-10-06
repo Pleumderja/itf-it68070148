@@ -38,7 +38,8 @@ function convertCurrency() {
     output = "USD";
   }
 
-  document.getElementById("resultText").innerText = "Result: " + result.toFixed(2) + " " + output;
+  document.getElementById("resultText").innerText =
+    "Result: " + result.toFixed(2) + " " + output;
   addHistory("Convert " + amount + " " + currency + " → " + result.toFixed(2) + " " + output);
 }
 

@@ -1,17 +1,56 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  background-color: #eef3ff; 
 }
 
-h1 {
-  color: blue;
+
+nav {
+  background-color: #0056d2;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-textarea {
-  width: 100%;
+
+.container {
+  display: flex;
+  gap: 20px;
 }
+
+
+.left, .right {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  flex: 1;
+}
+
+
+#log {
+  background-color: #fff9c4; 
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 
 button {
-  margin: 3px;
+  background-color: #0078ff;
+  color: white;
+  border: none;
   padding: 5px 10px;
+  margin: 3px;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: #0059c0;
+}
+
+
+input, select, textarea {
+  margin-top: 3px;
+  padding: 3px;
+}
+
+

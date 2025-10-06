@@ -8,32 +8,47 @@
 </head>
 <body>
 
-  <h1>ITF Simple Bank</h1>
-  <p>รหัสนักศึกษา: 68070148</p>
+  <nav>
+    <h1>ITF Simple Bank</h1>
+    <p>Student ID: 68070148</p>
+  </nav>
 
-  <h3>Transaction Log</h3>
-  <textarea id="history" rows="5" cols="50" readonly></textarea>
+ 
+  <div id="log">
+    <h2>Transaction Log</h2>
+    <textarea id="history" rows="5" readonly></textarea>
+  </div>
 
-  <h3>Balance Information</h3>
-  <p>Account Balance: <input type="number" id="accountBalance"></p>
-  <p>Cash Balance: <input type="number" id="cashBalance"></p>
-  <button onclick="setBalance()">Set Balance</button>
-  <h3>Bank Operation</h3>
-  <p>Amount: <input type="number" id="amount"></p>
-  <button onclick="deposit()">Deposit</button>
-  <button onclick="withdraw()">Withdraw</button>
 
-  <h3>Currency Converter</h3>
-  <p>Amount: <input type="number" id="inputAmount"></p>
-  <p>
-    Currency:
-    <select id="currency">
-      <option value="USD">USD</option>
-      <option value="THB">THB</option>
-    </select>
-  </p>
-  <button onclick="convertCurrency()">Convert</button>
-  <p id="resultText">Result: -</p>
+  <div class="container">
+
+    <div class="left">
+      <h3>Balance Information</h3>
+      <p>Account Balance: <input type="number" id="accountBalance"></p>
+      <p>Cash Balance: <input type="number" id="cashBalance"></p>
+      <button onclick="setBalance()">Set Balance</button>
+
+      <h3>Bank Operation</h3>
+      <p>Amount: <input type="number" id="amount"></p>
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+
+
+    <div class="right">
+      <h3>Currency Converter</h3>
+      <p>Amount: <input type="number" id="inputAmount"></p>
+      <p>
+        Currency:
+        <select id="currency">
+          <option value="USD">USD</option>
+          <option value="THB">THB</option>
+        </select>
+      </p>
+      <button onclick="convertCurrency()">Convert</button>
+      <p id="resultText">Result: -</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
